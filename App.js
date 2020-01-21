@@ -1,13 +1,35 @@
-import React from 'react';
+import React ,{Component} from 'react';
+import {connect} from 'react-redux';
 
-import  Main from './views/main';
-function App() {
+class App extends Component {
 
-  return (
-    <div className="App">
-      adsgdsagas
-    </div>
-  );
+    render(){
+      return (
+        <div>
+        <div>
+        <span>{this.props.num}</span>
+        <button onClick={this.props.onAdd}>Add</button>
+        <button onClick={this.props.onReduce}>Reduce</button>
+        </div>
+        </div>
+      );
+    }
 }
 
-export default App;
+const mapStateToProps=(state)=>{
+  return{
+    num:state.num
+  }
+}
+
+const mapDispatchToProps =dispatch=>{
+  return{
+    onAdd:()=>dispatch({type:"Add"}),
+    onReduce:()=>dispatch({type:"Reduce"})
+  }
+}
+
+export default connect(  
+  mapStateToProps,
+  mapDispatchToProps
+  )(App);
