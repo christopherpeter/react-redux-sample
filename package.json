@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "16.8",
+    "react-dom": "latest",
+    "react-redux": "latest",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
